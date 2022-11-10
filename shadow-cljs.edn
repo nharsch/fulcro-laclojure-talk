@@ -1,0 +1,19 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [
+  [reagent "1.1.1"]
+  [cider/cider-nrepl "0.21.1"]
+  [com.fulcrologic/fulcro "3.5.29"]
+  ]
+
+
+ :dev-http {8000 "resources/public"}
+
+ :builds {:app {:target :browser
+                :output-dir "resources/public/js"
+                :asset-path "/js"
+                :compiler-options {:infer-externs :auto}
+                :modules {:main {:init-fn app.core/init}}}}}
